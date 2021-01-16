@@ -35,6 +35,47 @@ body {
     min-height: 75vh;
 }
 
+#app-body .search {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+#app-body .search .search-form {
+    margin: 0 auto;
+}
+
+.search-form input[type="text"] {
+    border: 2px solid #219752;
+    border-radius: 5px;
+    height: 30px;
+    padding: 1px 10px;
+    width: 200px;
+}
+
+.search-form input[type="text"]:focus {
+    border: none;
+}
+
+.search-form input[type="text"]::placeholder {
+    color: #ccc;
+    font-size: 10px;
+}
+
+.search-form input[type="submit"] {
+    background: #2ecc71;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    height: 35px;
+}
+
+.search-form input[type="submit"]:hover {
+    background: #219752;
+}
+
 #app-footer {
     width: 100%;
     min-height: 10vh;
