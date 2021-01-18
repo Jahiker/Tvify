@@ -45,10 +45,8 @@ $(function() {
             tvShowsContainer.append(spinner)
 
             // Getting shows by search
-            $.ajax('http://api.tvmaze.com/search/shows', {
-                data: { q: busqueda },
-                success: function(res, textStatus, xhr) {
-
+            $.ajax(`http://api.tvmaze.com/search/shows?q=${busqueda}`)
+                .then((res) => {
                     // Modificando la respuesta para solo mostrar los shows
                     var shows = res.map((el) => {
                         return el.show;
@@ -59,9 +57,7 @@ $(function() {
                         tvShowsContainer.find('.loader').remove()
                         renderShows(shows)
                     }, 1000);
-
-                }
-            })
+                })
 
         })
 
@@ -75,17 +71,32 @@ $(function() {
         '</div>' +
         '</article>';
 
-    // Ajax Request Shows Collection
-    $.ajax('http://api.tvmaze.com/shows', {
-        success: function(shows, textStatus, xhr) {
 
-            // Removing the spinner loader animation
-            tvShowsContainer.find('.loader').remove()
+    // Verificando si existen datos en el LocalStorage
+    if (!localStorage.shows) {
 
-            // Render shows
-            renderShows(shows)
+        // Ajax Request Shows Collection
+        $.ajax('http://api.tvmaze.com/shows')
+            .then((shows) => {
+                // Removing the spinner loader animation
+                tvShowsContainer.find('.loader').remove()
 
-        }
-    })
+                // Guardando en el Localstorage
+                localStorage.shows = JSON.stringify(shows);
+
+                // Render shows
+                renderShows(shows)
+            })
+
+    } else {
+
+        shows = JSON.parse(localStorage.shows)
+
+        tvShowsContainer.find('.loader').remove()
+
+        renderShows(shows)
+
+    }
+
 
 })

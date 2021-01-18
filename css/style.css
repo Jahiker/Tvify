@@ -1,6 +1,6 @@
 body {
     background: #ccc;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -49,7 +49,7 @@ body {
     border: 2px solid #219752;
     border-radius: 5px;
     height: 30px;
-    padding: 1px 10px;
+    padding: 0px 10px;
     width: 200px;
 }
 
@@ -68,6 +68,7 @@ body {
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     height: 35px;
 }
@@ -92,7 +93,9 @@ body {
 }
 
 .tv-show {
+    border-radius: 8px;
     display: flex;
+    align-items: center;
     width: 100%;
     overflow: hidden;
     padding: 16px;
@@ -102,7 +105,11 @@ body {
 }
 
 .tv-show:hover {
-    background: #d0d0f1;
+    background: #d0f1d4;
+}
+
+.tv-show img {
+    border-radius: 8px;
 }
 
 .tv-show .info {
