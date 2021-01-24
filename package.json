@@ -1,0 +1,20 @@
+{
+  "name": "Tvify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jahiker/Tvify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jahiker/Tvify/issues"
+  },
+  "homepage": "https://github.com/Jahiker/Tvify#readme"
+}
